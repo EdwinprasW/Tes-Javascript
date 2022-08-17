@@ -1,10 +1,34 @@
+var cmprlist = document.getElementById('thelist');
+var listcmpr = cmprlist.getElementsByTagName('li');
+var theArray = [];
+
+
+for (var i = 0; i < listcmpr.length; i++) {
+    var arrValue = listcmpr[i].innerText;
+    theArray.push(arrValue);
+}
+
+
 function newElement() {
     var li = document.createElement("li");
     var TheInput = document.getElementById("txtinp").value;
     var inp = document.createTextNode(TheInput);
     li.appendChild(inp);
+    theArray.push(TheInput);
+
+    var cmprlist = document.getElementById('thelist');
+    var listcmpr = cmprlist.getElementsByTagName('li');
+
+    for (var i = 0; i < listcmpr.length; i++) {
+        if (TheInput === theArray[i]) {
+            var cmparr = theArray[i];
+        }
+    }
+
     if (TheInput === '') {
         alert("Kolom Input Kosong!");
+    } else if (TheInput == cmparr) {
+        alert("Input Sudah Ada");
     } else {
         document.getElementById("thelist").appendChild(li);
     }
