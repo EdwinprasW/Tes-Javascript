@@ -14,7 +14,7 @@ function newElement() {
     var TheInput = document.getElementById("txtinp").value;
     var inp = document.createTextNode(TheInput);
     li.appendChild(inp);
-    theArray.push(TheInput);
+
 
     var cmprlist = document.getElementById('thelist');
     var listcmpr = cmprlist.getElementsByTagName('li');
@@ -31,6 +31,7 @@ function newElement() {
         alert("Input Sudah Ada");
     } else {
         document.getElementById("thelist").appendChild(li);
+        theArray.push(TheInput);
     }
     document.getElementById("txtinp").value = "";
 
